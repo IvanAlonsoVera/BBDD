@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1>Select de una tabla</h1>
+	<form action="selecttabla.php" method="GET">
+		<input type="submit">
+	</form><hr>
+	<h1>Select de una tabla con WHERE</h1>
+	<form action="seletWhere.php" method="GET">
+		ID:<input type="text" name="id">
+		<input type="submit">
+	</form><hr>
+	<h1>Menores</h1>
+	<form action="menor.php" method="GET">
+		Menores:<input type="text" name="numero">
+		<input type="submit">
+	</form><hr>
+	<h1>INSERT en una tabla</h1>
+	<form action="insert.php" method="GET">
+		valor col 1<input type="text" name="col1"><br>
+		valor col 2<input type="text" name="col2"><br>
+		valor col 3<input type="text" name="col3"><br>
+		<input type="submit">
+	</form><hr>
+	<h1>DELETE en una tabla</h1>
+	<form action="borrar.php" method="GET">
+		ID:<input type="text" name="id">
+		<input type="submit">
+	</form><hr>
+	<h1>UPDATE en una tabla</h1>
+	<form action="update.php" method="GET">
+		ID:<input type="text" name="id"><br>
+		valor col 1<input type="text" name="col1"><br>
+		valor col 2<input type="text" name="col2"><br>
+		valor col 3<input type="text" name="col3"><br>
+		<input type="submit">
+	</form>
+</body>
+</html>
