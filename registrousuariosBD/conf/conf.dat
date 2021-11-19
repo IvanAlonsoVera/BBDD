@@ -1,4 +1,4 @@
 servidor=localhost
-usuario=ajaxbd
-pass=ajaxbd
-basededatos=ajaxbd
+usuario=ajaxbd1
+pass=ajaxbd1
+basededatos=ajaxbd1

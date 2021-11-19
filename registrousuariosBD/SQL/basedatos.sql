@@ -15,7 +15,7 @@ GRANT ALL PRIVILEGES ON `ajaxbd`.* TO 'ajaxbd'@'localhost';
 CREATE TABLE usuarios(
 	id INT(6) AUTO_INCREMENT NOT NULL,
 	nombre VARCHAR(100),
-	apellido VARCHAR(100),
+	apellidos VARCHAR(100),
 	user VARCHAR(20) NOT NULL UNIQUE,
 	pass VARCHAR(100) NOT NULL,
 	correo VARCHAR(100) NOT NULL UNIQUE,
@@ -26,3 +26,16 @@ COLLATE latin1_spanish_ci;
 
 /*_____________________________________________________________*/
 
+CREATE TABLE temas(
+id INT(6) AUTO_INCREMENT NOT NULL,
+	nombre VARCHAR(100),
+	titulo VARCHAR(100),
+	texto VARCHAR(1000),
+	id_usuario INT(6) NOT NULL,
+	CONSTRAINT pk_temas PRIMARY KEY(id),
+	CONSTRAINT fk_temas_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+)ENGINE=InnoDb
+CHARACTER SET latin1
+COLLATE latin1_spanish_ci;
+
+/*_____________________________________________________________*/

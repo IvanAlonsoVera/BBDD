@@ -17,14 +17,6 @@ function registrar (){
 		window.location.replace("error.html");
 	}
 }
-function login (){
-	let login ={};
-
-	login.usuario = document.getElementById("usu").value;
-	login.contrasena = document.getElementById("passw").value;
-
-	ajax(login);
-}
 function ajax (u){
 	console.log(u);
 	console.log(u.usuario);
