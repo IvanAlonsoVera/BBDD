@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>usuarios</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/usuario.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="container mt-3 text-center">
+		<h3 class="display-3">Login y Registro</h3>
+
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalreg">Registrar</button>
+		
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modallog">Login</button>
+		<h5 class="display-3" id="salida"></h5>
+	</div>
+
+	<div class="modal" id="modalreg">
+		<div class="modal-dialog">
+    		<div class="modal-content">
+	    		<!-- Modal Header -->
+			    <div class="modal-header">
+			       	<h4 class="modal-title">Registro de usuarios</h4>
+			    	<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			    </div>
+
+			    <form>
+				    <!-- Modal body -->
+				    <div class="modal-body">
+				    	<table>
+				    		<tr>
+						    	<td><label for="nom">Nombre:</label></td>
+						    	<td><input type="text" id="nom" name="nombre"></td>
+						    </tr><tr>	
+						    	<td><label for="ape">Apellidos:</label></td>
+						    	<td><input type="text" id="ape" name="apellidos"></td>
+						    </tr><tr>	
+						    	<td><label for="cor">Correo:</label></td>
+						    	<td><input type="text" id="cor" name="correo"></td>
+						    </tr><tr>	
+						    	<td><label for="usu">usuario:</label></td>
+						    	<td><input type="text" id="usu" name="usuario" required></td>
+						    </tr><tr>	
+						    	<td><label for="passw">password:</label></td>
+						    	<td><input type="text" id="passw" name="contra" required></td>
+						    </tr><tr>	
+				    	</table>
+			    	</div>
+			    
+
+			      		<!-- Modal footer -->
+			    	<div class="modal-footer">
+			    		<button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="registrar()">Registrar</button>
+			    
+				    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+				   </form>
+	      		</div>
+    		</div>
+    	</div>
+	</div>
+
+	<div class="modal" id="modallog">
+		<div class="modal-dialog">
+    		<div class="modal-content">
+	    		<!-- Modal Header -->
+			    <div class="modal-header">
+			       	<h4 class="modal-title">Registro de usuarios</h4>
+			    	<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			    </div>
+
+			    <form>
+				    <!-- Modal body -->
+				    <div class="modal-body">
+				    	<label for="usu">usuario:</label>
+				    	<input type="text" id="usu" name="usuario" required>
+				    	<br>
+				    	<label for="passw">password:</label>
+				    	<input type="text" id="passw" name="contra" required>
+				    	<br>
+			    	</div>
+			    
+
+			      		<!-- Modal footer -->
+			    	<div class="modal-footer">
+			    		<button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="login()">Iniciar</button>
+			    
+				    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+				   </form>
+	      		</div>
+    		</div>
+    	</div>
+	</div>
+</body>
+</html>
