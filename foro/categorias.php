@@ -11,7 +11,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>	
 	<style type="text/css" href="css/temas.css"></style>
-
 	<script type="text/javascript" src="js/categorias.js"></script>
 </head>
 <body>
@@ -43,9 +42,7 @@
 			<div class="col-6">
 				<table class="table table-bordered table-sm table-striped">
 					<tbody id="tabCat">
-
-					<!--Esto es lo que se tiene que generar desde PHP-->
-					<tr onclick="location.href='temas.php?cate=1'"><td>Categoria1 <span class='text-danger'>añlsdjfklsdjf</span></td></tr><tr onclick="location.href='temas.php?cate=2'"><td>Categoria2 <span class='text-danger'>añlsdjfklsdjf</span></td></tr>					
+						
 					</tbody>
 				</table>
 			</div>

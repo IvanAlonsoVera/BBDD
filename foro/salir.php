@@ -3,5 +3,5 @@
 
 	session_unset();
 	session_destroy();
-	header("Location: http://basededatos.turi/registrousuariosajaxBD/")
+	header("Location: http://foro.iva/")
 ?>
