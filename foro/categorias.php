@@ -42,7 +42,64 @@
 			<div class="col-6">
 				<table class="table table-bordered table-sm table-striped">
 					<tbody id="tabCat">
-						
+						<?php
+							$dirConf = "conf/";
+							$fichConf = "conf.dat";
+
+							$fc = fopen($dirConf.$fichConf,"r");
+
+							$conexBD = [];
+
+							while(!feof($fc)){ //feof => File - End Of File
+								$linea = fgets($fc); //fgets => File - Get String
+								$datosLinea = explode("=",$linea);
+								$conexBD[$datosLinea[0]]=trim($datosLinea[1]);
+							}
+
+							fclose($fc);
+
+							try {
+							    //construir un objeto de la clase PDO para conectar a la base de datos		
+							    $conn = new PDO("mysql:host=".$conexBD["servidor"].";dbname=".$conexBD["basededatos"], $conexBD["usuario"], $conexBD["pass"]);
+
+						 		//fijar el atributo MODO de ERROR en el valor EXCEPTION
+						  		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+						  		//contar sobre categorias con el nombre de la categoria
+						  		//SELECT COUNT(*) FROM categorias WHERE nombre=$nombre
+
+						  		//preparamos la consulta
+							  		$stmt = $conn->prepare("SELECT COUNT(*) as N FROM categorias");
+						  
+									//ejecutamos la consulta
+						  	  		$stmt->execute();
+
+						  	  		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+						 
+						  	  		//los resultados
+						  	  		$salida = $stmt->fetchAll();
+
+						  	  		for ($i=0; $i < count($salida); $i++) { 
+						  	  			echo "<tr>";
+						  	  				echo "<td>";
+						  	  					echo '<a href="http://foro.iva/temas.php?cate='.$salida[$i]["id"].'">';
+							  	  					echo $salida[$i]["nombre"]."-";
+							  	  					echo $salida[$i]["descripcion"];
+						  	  					echo "</a>";
+						  	  				echo "</td>";
+						  	  			echo "</tr>";
+						  	  		}
+						 	} catch(PDOException $e) {
+
+								error_log("Error en la insercion: " . $e->getMessage());
+
+								echo "-1";
+							}
+							$conn=null;
+
+
+
+						?>
 					</tbody>
 				</table>
 			</div>
