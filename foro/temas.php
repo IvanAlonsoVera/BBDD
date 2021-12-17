@@ -90,6 +90,9 @@
 
 					  		//cards
 					  		echo '<div class="mt-3 card border-dark">';
+
+					  			echo '<img src="imagenes/prueba.jpg" class="card-img-top">';
+
 						  		echo '<div class="card-header">';
 	    						echo $tema["titulo"];
 	  							echo '</div>';

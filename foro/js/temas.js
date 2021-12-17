@@ -22,6 +22,10 @@ function registraTema() {
 		    	let ctn = document.createElement("div");
 		    	ctn.setAttribute("class","mt-3 card border-dark");
 
+		    	let img = document.createElement("img");
+		    	img.setAttribute("class","card-img-top");
+		    	img.setAttribute("src","imagenes/prueba.jpg");
+
 		    	let tit = document.createElement("div");
 		    	tit.setAttribute("class","card-header");
 		    	let titulo = document.createTextNode(tema[0]);
@@ -37,6 +41,7 @@ function registraTema() {
 		    	let boton = document.createTextNode("borrar");
 
 		    	con.appendChild(ctn);
+		    	ctn.appendChild(img);
 		    	ctn.appendChild(tit);
 		    	ctn.appendChild(tex);
 		    	ctn.appendChild(btn);
