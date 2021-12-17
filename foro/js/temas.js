@@ -14,13 +14,39 @@ function registraTema() {
 		//**********************************************
 		//recibir la respuesta
 		llamada.onload = function() {
+			let resp = JSON.parse(this.responseText);
+	    	if (resp[0]){
+	    		
+		    	let con = document.getElementById("contenedorTemas");
 
-	    	let resp = JSON.parse(this.responseText);
+		    	let ctn = document.createElement("div");
+		    	ctn.setAttribute("class","mt-3 card border-dark");
 
-	    	if(resp){
-	    		window.location.replace("principal.php");
+		    	let tit = document.createElement("div");
+		    	tit.setAttribute("class","card-header");
+		    	let titulo = document.createTextNode(tema[0]);
+		    	
+		    	
+		    	let tex = document.createElement("div");
+		    	tex.setAttribute("class","card-body");
+		    	let texto = document.createTextNode(tema[1]);
+
+		    	let btn = document.createElement("a");
+		    	btn.setAttribute("class","btn btn-primary");
+		    	btn.setAttribute("href","borraTema.php?id="+resp[1]+"&cate="+tema[2]);
+		    	let boton = document.createTextNode("borrar");
+
+		    	con.appendChild(ctn);
+		    	ctn.appendChild(tit);
+		    	ctn.appendChild(tex);
+		    	ctn.appendChild(btn);
+		    	tit.appendChild(titulo);
+		    	tex.appendChild(texto);
+		    	btn.appendChild(boton);
+
+
 	    	}else{
-	    		window.location.replace("errorTema.php");
+	    		alert ("error");
 	    	}
 
 	    }

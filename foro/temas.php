@@ -61,7 +61,7 @@
 		<div class="row">
 			<div class="col-3">
 			</div>
-			<div class="col-6">		
+			<div id="contenedorTemas" class="col-6">		
 				<?php
 
 
@@ -97,7 +97,7 @@
 	    						echo $tema["texto"];
 	  							echo '</div>'; 
 	  							if($tema["id_usuario"]==$_SESSION["id"]){
-	  								echo '<a href="borraTema.php?id='.$tema["id"].'" class="btn btn-primary" >Borrar</a>';
+	  								echo '<a href="borraTema.php?id='.$tema["id"].'&cate='.$_GET['cate'].'" class="btn btn-primary" >Borrar</a>';
 	  							}
 					  		echo '</div>';
 					  	}

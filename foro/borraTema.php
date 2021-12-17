@@ -3,6 +3,7 @@
 require "dentro.php";
 
 $id = $_GET["id"] ?? -1;
+$cate = $_GET['cate'];
 
 try {
   //construir un objeto de la clase PDO para conectar a la base de datos	
@@ -22,4 +23,4 @@ try {
 //deconectar de la BD
 $conn = null;
 
-header('Location: http://basededatos.turi/registrousuariosajaxBD/principal.php');
+header('Location: http://foro.iva/temas.php?cate='.$cate);

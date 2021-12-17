@@ -2,8 +2,7 @@ function creaCategoria() {
 
 	let nombre=document.getElementById('tituloCat').value;
 	let descrip = document.getElementById('descCat').value;	
-	let id = insertaCategoria(nombre,descrip)
-
+	let id = insertaCategoria(nombre,descrip);
 	
 	
 }
@@ -15,9 +14,14 @@ function insertaCategoria(nom, desc) {
 		let tabla = document.getElementById("tabCat");
 		let fila = document.createElement("tr");
 		let celda = document.createElement("td");
-		let texto = document.createTextNode(nom+" "+desc);
+		let texto = document.createTextNode(nom+" - "+desc);
+		let enlace = document.createElement("a");
 
-		celda.appendChild(texto);
+		enlace.setAttribute("href","http://foro.iva/temas.php?cate="+this.responseText);
+
+		enlace.appendChild(texto);
+
+		celda.appendChild(enlace);
 
 		fila.appendChild(celda);
 
@@ -29,7 +33,6 @@ function insertaCategoria(nom, desc) {
 
 
 	llamada.onload = function(){
-		alert (this.responseText);
 		let res = this.responseText;
 		return res;
 	}

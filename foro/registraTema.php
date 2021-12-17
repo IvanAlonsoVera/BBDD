@@ -13,29 +13,19 @@
 
   		$sql = "INSERT INTO temas(titulo,texto,id_usuario,id_categoria) VALUES('".$tema[0]."','".$tema[1]."',".$_SESSION["id"].",".$tema[2].") ";
   		$conn->exec($sql);
+  		
 
-
-  		//recuperar el id de la categoria creada
-
-		$stmt = $conn->prepare('SELECT id FROM categorias WHERE nombre="'.$cat[0].'"');
-		//ejecutamos la consulta
-		$stmt->execute();
-		//modo de resultados en array asociativo
-		$stmt->setFetchMode(PDO::FETCH_ASSOC);
-	  	//los resultados
-	  	$salida = $stmt->fetchAll();
-	  	$salida[0]["id"];
+		$id = $conn->lastInsertId();
 
   		$conn = null;
 
-		$resp=$salida[0]["id"];
+		$resp=[true,$id];
 		echo json_encode($resp);
-
 
 	} catch(PDOException $e) {
 
 		error_log("Error en la insercion: " . $e->getMessage());
 
-		$resp=false;
-		echo json_encode($resp.$e->getMessage());
+		$resp=[false,0];
+		echo json_encode($resp);
 	}

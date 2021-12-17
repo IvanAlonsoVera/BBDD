@@ -69,7 +69,7 @@
 						  		//SELECT COUNT(*) FROM categorias WHERE nombre=$nombre
 
 						  		//preparamos la consulta
-							  		$stmt = $conn->prepare("SELECT COUNT(*) as N FROM categorias");
+							  		$stmt = $conn->prepare("SELECT id,nombre,descripcion FROM categorias");
 						  
 									//ejecutamos la consulta
 						  	  		$stmt->execute();
