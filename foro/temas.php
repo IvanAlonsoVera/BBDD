@@ -74,7 +74,7 @@
 
 						//Pasos para hacer un SELECT de la base de datos
 						//preparamos la consulta
-						$stmt = $conn->prepare("SELECT * FROM temas WHERE id_categoria=".$_GET["cate"]);
+						$stmt = $conn->prepare("SELECT * FROM temas WHERE id_categoria=".$_GET["cate"]." ORDER BY id DESC");
 					  
 			
 			  	  		//ejecutamos la consulta

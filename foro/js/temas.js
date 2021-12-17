@@ -40,7 +40,7 @@ function registraTema() {
 		    	btn.setAttribute("href","borraTema.php?id="+resp[1]+"&cate="+tema[2]);
 		    	let boton = document.createTextNode("borrar");
 
-		    	con.appendChild(ctn);
+		    	con.prepend(ctn);
 		    	ctn.appendChild(img);
 		    	ctn.appendChild(tit);
 		    	ctn.appendChild(tex);
